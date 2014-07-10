@@ -1,0 +1,6 @@
+customer1 = Customer.new(name: "Jens")
+customer1.save 
+
+order1 = Order.new(customer: customer1)
+order1.save
+

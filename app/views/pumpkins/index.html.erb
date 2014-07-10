@@ -1,0 +1,37 @@
+<h1>Listing pumpkins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%=t :type %></th>
+      <th><%=t :color %></th>
+      <th><%=t :size %></th>
+      <th>
+        <% if params[:order_direction] == "desc" %>
+          <%= link_to t(:price), pumpkins_path(order_by: :price, order_direction: :asc) %>
+        <% else %>
+          <%= link_to t(:price), pumpkins_path(order_by: :price, order_direction: :desc) %>
+        <% end %>
+      </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pumpkins.each do |pumpkin| %>
+      <tr>
+        <td><%= pumpkin.name %></td>
+        <td><%= pumpkin.color %></td>
+        <td><%= pumpkin.size %></td>
+        <td><%= pumpkin.price %></td>
+        <td><%= link_to t(:show), pumpkin %></td>
+        <td><%= link_to t(:edit), edit_pumpkin_path(pumpkin) %></td>
+        <td><%= link_to t(:destroy), pumpkin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t(:new_pumpkin), new_pumpkin_path %>

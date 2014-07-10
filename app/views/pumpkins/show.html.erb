@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @pumpkin.name %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @pumpkin.color %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @pumpkin.size %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @pumpkin.price %>
+</p>
+
+<%= link_to 'Edit', edit_pumpkin_path(@pumpkin) %> |
+<%= link_to 'Back', pumpkins_path %>

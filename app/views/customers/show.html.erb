@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @customer.discount %>
+</p>
+
+<table>
+	<strong>Order:</strong><br/>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Placed on</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.placed_on %></td>
+        <td><%= order.price %></td>
+        <td><%= order.status %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+    <strong><%= @orderSum %></strong>
+<br>
+<br>
+
+<%= link_to 'New Order', new_order_path(customer: @customer) %>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

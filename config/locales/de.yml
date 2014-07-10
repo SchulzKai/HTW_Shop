@@ -1,0 +1,9 @@
+de:
+  type: "Typ"
+  color: "Farbe"
+  size: "Größe"
+  price: "Preis"
+  show:	"Zeigen"
+  edit:	"Bearbeiten"
+  destroy: "Löschen"
+  new_pumpkin: "Neuer Kürbis"

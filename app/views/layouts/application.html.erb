@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTW</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<ul>
+		<li> <%= link_to 'customers', customers_path %></li>
+		<li> <%= link_to 'orders', orders_path %></li>
+		<li> <%= link_to 'line items', line_items_path %></li>
+		<li> <%= link_to 'pumpkins', pumpkins_path %></li>
+	</ul>
+
+	<ul>
+		<li> <%= link_to 'de', '?locale=de' %></li>
+		<li> <%= link_to 'en', '?locale=en' %></li>
+	</ul>
+
+<%= yield %>
+
+<% if Rails.env == "development" %>
+<hr/>
+<%= params.inspect %>
+<% end %>
+</body>
+</html>
